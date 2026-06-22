@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cesarstwo Niemieckie [Minecraft] - Oficjalny Portal</title>
+    <style>
+        :root {
+            --ger-black: #111111;
+            --ger-dark-gray: #1E1E1E;
+            --ger-gray: #2A2A2A;
+            --ger-red: #DD0000;
+            --ger-gold: #FFCC00;
+            --ger-diamond: #4AEDD9; /* Dodany kolor diamentu */
+            --text-light: #E8E8E8;
+            --text-dim: #A0A0A0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--ger-black);
+            color: var(--text-light);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--ger-dark-gray);
+            border-bottom: 4px solid var(--ger-red);
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            padding: 8px 15px;
+            background-color: var(--ger-black);
+            border: 1px solid var(--ger-gray);
+            border-bottom: 3px solid var(--ger-gold);
+            transition: all 0.3s;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover {
+            background-color: var(--ger-red);
+            color: #fff;
+            border-bottom: 3px solid #fff;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(180deg, #2a0a0a 0%, var(--ger-black) 100%);
+            border: 2px solid var(--ger-gray);
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-family: Georgia, serif;
+            font-size: 3rem;
+            color: var(--ger-gold);
+            text-shadow: 2px 2px 4px #000;
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-family: Georgia, serif;
+            font-size: 1.2rem;
+            color: var(--ger-red);
+            font-style: italic;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background-color: var(--ger-gray);
+            border-left: 4px solid var(--ger-gold);
+            padding: 20px;
+            box-shadow: 4px 4px 0px rgba(0,0,0,0.8);
+        }
+
+        .card h2 {
+            font-family: Georgia, serif;
+            color: var(--ger-gold);
+            border-bottom: 1px solid var(--ger-red);
+            padding-bottom: 10px;
+            margin-top: 0;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+        }
+
+        .info-box {
+            padding: 12px;
+            background-color: var(--ger-dark-gray);
+            border: 1px solid #444;
+            margin: 10px 0;
+            font-size: 0.95rem;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            background-color: var(--ger-gold);
+            color: #000;
+            font-weight: bold;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        /* Specjalne stylowanie dla kafelka z walutą */
+        .currency-highlight {
+            color: var(--ger-diamond);
+            font-weight: bold;
+            text-shadow: 0 0 5px rgba(74, 237, 217, 0.4);
+        }
+
+        .recruitment-section {
+            background-color: #1a1a1a;
+            border: 2px solid var(--ger-red);
+            padding: 30px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .recruitment-section::before {
+            content: "DOKUMENTY / ANTRAG";
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: var(--ger-red);
+            color: #fff;
+            padding: 2px 10px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .recruitment-section h2 {
+            text-align: center;
+            color: var(--ger-gold);
+            font-family: Georgia, serif;
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+
+        .disclaimer {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            background-color: var(--ger-black);
+            border: 1px solid #555;
+            color: var(--text-light);
+            font-family: inherit;
+            box-sizing: border-box;
+            transition: 0.2s;
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--ger-gold);
+            box-shadow: 0 0 5px rgba(255, 204, 0, 0.3);
+        }
+
+        button.submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: var(--ger-red);
+            color: #fff;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        button.submit-btn:hover {
+            background-color: #ff2222;
+            color: var(--ger-gold);
+        }
+
+        .success-message {
+            display: none;
+            background-color: var(--ger-dark-gray);
+            color: var(--ger-gold);
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 15px;
+            border: 1px solid var(--ger-gold);
+        }
+
+        footer {
+            background-color: var(--ger-dark-gray);
+            border-top: 2px solid var(--ger-gray);
+            text-align: center;
+            padding: 20px;
+            color: var(--text-dim);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#gospodarka">Przemysł</a>
+            <a href="#waluta">Waluta</a>
+            <a href="#bezpieczenstwo">Obronność</a>
+            <a href="#wspolpraca">Dyplomacja</a>
+            <a href="#prawa">Prawo</a>
+            <a href="#dolacz">Zaciąg</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="hero">
+            <h1>⛏️ Cesarstwo Niemieckie ⛏️</h1>
+            <p>"Ordnung muss sein" - Porządek musi być.</p>
+        </div>
+
+        <div class="grid">
+            <!-- Gospodarka -->
+            <div class="card" id="gospodarka">
+                <h2>⚙️ Przemysł i Gospodarka</h2>
+                <p>Gospodarka Cesarstwa opiera się na ciężkim przemyśle i inżynierii <strong>Redstone</strong>. Nie ma miejsca na bałagan – każda farma i kopalnia musi działać z maksymalną wydajnością.</p>
+                <div class="info-box">
+                    <strong>Dyrektywa Gospodarcza:</strong> Wszyscy górnicy mają obowiązek oddawać 20% wydobytych diamentów do Państwowego Skarbca, aby utrzymać wartość naszej waluty.
+                </div>
+                <p>Państwo posiada monopol na produkcję torów. Handlować na targu można tylko po uzyskaniu oficjalnej koncesji.</p>
+            </div>
+
+            <!-- Pieniądz -->
+            <div class="card" id="waluta">
+                <h2>💎 Waluta Państwowa</h2>
+                <p>Oficjalną i najtwardszą walutą Cesarstwa jest <span class="currency-highlight">Diamentowa Marka (DM)</span>.</p>
+                <p>Waluta jest w pełni oparta na standardzie diamentowym (parytecie złota). 1 Diamentowa Marka to równowartość 1 diamentu. Skarbiec państwa w Berlinie-bloków gwarantuje wymienialność waluty w każdej chwili.</p>
+                <p><em>Uwaga: Używanie szmaragdów, żelaza czy złota jako waluty w transakcjach między obywatelami jest nielegalne i podważa siłę gospodarki Cesarstwa.</em></p>
+            </div>
+
+            <!-- Sytuacja Wojenna -->
+            <div class="card" id="bezpieczenstwo">
+                <h2>🦅 Sytuacja Strategiczna</h2>
+                <p><strong>Stan Sił Zbrojnych:</strong> <span class="status-badge">Wysoka Gotowość</span></p>
+                <p style="margin-top:10px;">Cesarstwo nie jest obecnie w stanie wojny, ale granice są szczelnie zamknięte. Posiadamy potężne umocnienia z bloków cobblestone i murów z cegielni.</p>
+                <div class="info-box" style="border-left: 3px solid var(--ger-red);">
+                    <strong>Ostrzeżenie:</strong> Za próbę nielegalnego przekroczenia granicy Cesarstwa grozi ostrzał z łuków przez strażników bez ostrzeżenia.
+                </div>
+                <p>Nasze siły lądowe wspierane są przez elitarny batalion Żelaznych Golemów.</p>
+            </div>
+
+            <!-- Współprace -->
+            <div class="card" id="wspolpraca">
+                <h2>🤝 Dyplomacja i Sojusze</h2>
+                <p>Cesarstwo prowadzi politykę realpolitik. Współpracujemy tylko z państwami silnymi i zorganizowanymi.</p>
+                <ul>
+                    <li><strong>Pakt Stalowy:</strong> Sojusz militarno-gospodarczy z sąsiednim państwem (wymiana technologii redstone na surowce).</li>
+                    <li><strong>Umowa o ekstradycji:</strong> Griefierzy uciekający z Cesarstwa są wydawani i karani przez naszych sojuszników.</li>
+                    <li><strong>Neutralność:</strong> Nie ingerujemy w wojny barbaryjskich plemion (niezorganizowanych graczy).</li>
+                </ul>
+            </div>
+
+            <!-- Prawa -->
+            <div class="card" id="prawa">
+                <h2>📜 Prawo i Porządek</h2>
+                <p>W Cesarstwie obowiązuje ścisła hierarchia i dyscyplina. Wolność jednostki kończy się tam, gdzie zaczyna się bezpieczeństwo państwa.</p>
+                <p><strong>Zakazane jest:</strong></p>
+                <ul>
+                    <li>Griefing (Kara: dożywotni ban lub praca w kopalni głębinowej na poziomie Y=-59)</li>
+                    <li>Budowa bez zezwolenia (Wymagany "Baugenehmigung" - pozwolenie budowlane)</li>
+                    <li>Posiadanie nieudokumentowanych diamentów (podejrzenie o oszustwa podatkowe)</li>
+                </ul>
+            </div>
+
+            <!-- Geografia -->
+            <div class="card">
+                <h2>🏰 Stolica i Terytorium</h2>
+                <p>Stolicą Cesarstwa jest majestatyczne <strong>Berlin-bloków</strong> – miasto zbudowane w 100% z cegielni, kamienia i ciemnego dębu. Znajduje się tam Kancelaria, Pałac Cesarza oraz Podziemny Skarbiec Diamentowy.</p>
+                <p>Terytorium charakteryzuje się równymi, wytyczonymi drogami z brukowców i wysoce zmechanizowanym rolnictwem.</p>
+            </div>
+        </div>
+
+        <!-- Formularz Rekrutacyjny -->
+        <section class="recruitment-section" id="dolacz">
+            <h2>Wniosek o Przyznanie Obywatelstwa</h2>
+            <p class="disclaimer">Formularz jest całkowicie anonimowy. Wymagamy jedynie nicku z gry. Przestrzegamy prywatności.</p>
+            
+            <form id="citizenForm">
+                <div class="form-group">
+                    <label for="nick">Nick w Minecraft (Pole Obligatoryjne):</label>
+                    <input type="text" id="nick" name="nick" placeholder="Wpisz swój nick..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="role">Preferowany Korpus Służby:</label>
+                    <select id="role" name="role" required>
+                        <option value="">-- Wybierz swoje przeznaczenie --</option>
+                        <option value="gornik">Górnik Przemysłu Ciężkiego (Wydobycie)</option>
+                        <option value="inzynier">Inżynier Redstone (Technika)</option>
+                        <option value="budowniczy">Architekt Twierdz (Budownictwo)</option>
+                        <option value="wojownik">Piechur Obrony Terytorialnej (Wojsko)</option>
+                        <option value="rolnik">Pracownik Rolny (Rolnictwo)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="exp">Doświadczenie w grze:</label>
+                    <input type="text" id="exp" name="exp" placeholder="Np. gram od wersji 1.12, znam się na redstone...">
+                </div>
+
+                <div class="form-group">
+                    <label for="why">Dlaczego chcesz służyć Cesarstwu?</label>
+                    <textarea id="why" name="why" rows="4" placeholder="Uzasadnij swoją przydatność dla państwa..." required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Wyślij Wniosek do Kancelarii</button>
+                <div class="success-message" id="successMsg">
+                    ✅ Wniosek zarejestrowany. Udaj się na serwer, aby stawić się przed komisją poborową.
+                </div>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; Kancelaria Cesarstwa Niemieckiego (Minecraft). Wszelkie prawa zastrzeżone.</p>
+        <p>Kontakt dyplomatyczny: kanzler@cesarstwo.mc | Discord: discord.gg/cesarstwo-mc</p>
+    </footer>
+
+    <script>
+        document.getElementById('citizenForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('successMsg').style.display = 'block';
+            this.reset();
+            setTimeout(function() {
+                document.getElementById('successMsg').style.display = 'none';
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
